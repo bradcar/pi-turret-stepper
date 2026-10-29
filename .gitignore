@@ -1,3 +1,17 @@
+# PyCharm project-level files and directories
+.idea/
+*.iml
+
+# Virtual environment
+venv/
+env/
+
+# Distribution and packaging
+.cache/
+dist/
+build/
+*.egg-info/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
@@ -14,7 +28,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+# COMMENTED lib is SOURCE for PI ZERO Projects lib/
 lib64/
 parts/
 sdist/

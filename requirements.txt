@@ -1,0 +1,34 @@
+# Python dependencies
+# run in the directory: ~/pi-turret-stepper   with:
+#   /home/pi-admin/.virtualenvs/pi-turret-stepper/bin/pip install -r requirements.txt
+
+# Stubs
+# for Pico micropython-stubs
+#for Pi Zero
+micropython-unix-stubs
+
+# Math & Plotting
+matplotlib
+numpy
+
+# Display & sensor
+Pillow
+adafruit-circuitpython-ssd1305
+adafruit-circuitpython-epd
+
+# Hardware, I2C & Board Interfaces (likely have to sudo aptget for rpi-lgpio
+Adafruit-Blinka
+#rpi-lgpio
+python-periphery
+gpiozero
+spidev
+
+# Actuators
+adafruit-circuitpython-motorkit
+gpiod>=2.2.2,<3
+Adafruit-Blinka-Raspberry-Pi-PWM>=1.0.2
+rpi_ws281x>=4.0.0
+
+# System & Utilities
+#pip install -r requirements.txt
+python-dotenv

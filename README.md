@@ -13,9 +13,9 @@ Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_s
 * **Turret Step Angle:** 0.655° per step (1.8° * 2.75)
 * **Turret Revolution Steps:** 550 total steps (200 * 2.75)
 * **Turret Output Speed:** 18.18 RPM
-  * * Steps per minute: 18.18 RPM × 200 steps/revolution = 3,636 steps/minute
-  * * Steps per second: 3,636 steps / 60 seconds = 60.6 steps/second
-  * * Time per single step: 1 second / 60.6 steps = 0.0165 seconds (16.5 ms)
+  * Steps per minute: 18.18 RPM × 200 steps/revolution = 3,636 steps/minute
+  * Steps per second: 3,636 steps / 60 seconds = 60.6 steps/second
+  * Time per single step: 1 second / 60.6 steps = 0.0165 seconds (16.5 ms)
 * **Rotation Duration:** 3.3 secs
 * **Estimated Angular Error:** 0.033° positional error
 

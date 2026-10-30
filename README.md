@@ -25,16 +25,15 @@ Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_s
 * **Product Page:** [Adafruit Product 324](https://www.adafruit.com/product/324)
 * **Overview Doc:** [Adafruit DC & Stepper Motor HAT for Raspberry Pi](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi)
 * **Rated Voltage & Current:** 12v  @ 350 mA
-* **Step Angle:** 1.8° per step (5\% angle accuracy)
+* **Step Angle:** 1.8° per step (5% angle accuracy)
 * **Steps per Revolution:** 200
 * **Speed:** 50 RPM
 * **Holding Torque (per phase):**
-  * 2 kg - cm (20 N-cm, 28 oz-in)
+  * 2 kg-cm (20 N-cm, 28 oz-in)
 * **Drive Shaft:** 5 mm diameter, 24 mm long, with a machined flat
 
 ### goBILDA 169 Metal Turret
 * **Product Page:** [Gear-Driven Turret (2.75:1 Ratio, 105mm ID)](https://www.gobilda.com/gear-driven-turret-2-75-1-ratio-105mm-id/)
-* **Adaptors:**: 1700 Series Stepper Mount (NEMA 17), 1314 Series Set-Screw Hub (5mm Bore). 1120 Series U-Channel (8 Hole, 216mm), 140 Series Aluminum Baseplate (6mm, 144mm Diameter), Plastic Hub-Mount Disc (240mm Diameter)
 * **Gear Reduction:** 2.75:1
 * **Weight:** 438 g (with 64T Gear)
 

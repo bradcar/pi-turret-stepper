@@ -31,7 +31,7 @@ Mechanical Loading & Edge Forces
 Precision, Accuracy & Backlash
 * **Estimated Angular Error:** 0.033° positional error at the turret output.
 * **Backlash:**
-  * Because this is a metal turret reduction, mechanical backlash (interplay between gear teeth) will likely dominate real-world positioning accuracy when reversing direction.
+  * On metal turret reductions, mechanical backlash (interplay between gear teeth) an dominate real-world positioning accuracy when reversing direction.
   * Even if the motor steps precisely, the turret may exhibit a small deadband of free movement before gears engage in the opposite direction, unless anti-backlash gears or preload mechanisms are used.
 
 ## 2. Adafruit Stepper Motor 4-wire bipolar (NEMA-17, pid 324)
@@ -59,6 +59,13 @@ Precision, Accuracy & Backlash
 * **Product Page:** [Gear-Driven Turret (2.75:1 Ratio, 105mm ID)](https://www.gobilda.com/gear-driven-turret-2-75-1-ratio-105mm-id/)
 * **Gear Reduction:** 2.75:1
 * **Weight:** 438g (with 64T Gear — may need to be purchased separately)
+* **Adaptors:**: 
+  * 1700 Series Stepper Mount (NEMA-17)
+    * will add thermal paste so frame can also be heat sink
+  * 1314 Series Set-Screw Hub (5mm Bore)
+  * 1120 Series U-Channel (8 Hole, 216mm)
+  * 140 Series Aluminum Baseplate (6mm, 144mm Diameter)
+  * Plastic Hub-Mount Disc (240mm Diameter)
 
 ---
 

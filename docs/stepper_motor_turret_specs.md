@@ -70,5 +70,19 @@ Precision, Accuracy & Backlash
   * 140 Series Aluminum Baseplate (6mm, 144mm diameter)
   * Plastic Hub-Mount Disc (240mm diameter)
 
+## 4. Optical encoder [TODO ...Explore this more]
+Stepper Motor on turret drives 64-tooth gear (goBilda)
+* **Encoder Product (DigiKey):** Bourns EM14R0D-R20-L064S optical encoder
+* **Product page:** https://www.digikey.com/en/products/detail/bourns-inc/EM14R0D-R20-L064S/2538006
+  * 6mm D-shaft
+  * Encoder Specifications & Quadrature Math 
+    * Encoder Resolution: 64 PPR (Pulses Per Revolution).
+    * Quadrature Decoding: Optical quadrature encoders generate two signal lines (A and B) shifted by 90°. 
+  * When reading both leading/trailing edges of both channels, 64 PPR gives 256 Counts Per Revolution (CPR).
+  * Stepper Resolution: 200 step/rev motor operating in full steps requires 1 step per 1.8°
+* **30-Tooth Encoder Pinion Gear (goBilda):** 2303 Series Steel, MOD 0.8 Pinion Gear (6mm D-Bore, 30 tooth)
+  * The Bourns EM14 series optical encoder has a maximum rating of 120 RPM.
+  * High Resolution for Missed Step Detection:
+    * 64:30 tooth ratio gives 2.73 counts per full motor step. Gives high confidence to detect a single missed step.
 ---
 

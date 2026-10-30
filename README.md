@@ -2,27 +2,25 @@
 Turret driven by stepper motor controlled by Pi Zero 2 W.
 
 Turret can be used as a platter for rotating sensors. Sensors may be mounted to point outward.
-Because this is turret, the platter can be removed and sensors may be pointed inward to center where non-rotating sample can be placed.
+Because this is turret, the platter can be removed and sensors may be pointed inward toward the center where non-rotating sample can be placed.
 
 Scanning rotation example:
-* for 6 seconds every turret step (0.655°), a complete rotation would take 3,300 seconds (55 min, = (550 * 6)/60)
+* In the case where 6 seconds elapase every turret step (0.655°), a complete rotation would take 3,300 seconds (55 min = (550 * 6)/60)
 
 ## References:
 Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_specs.md)
 
-### GitHub for Adafruit DC and Stepper Motor HAT for Raspberry Pi
-* https://github.com/adafruit/Adafruit_CircuitPython_MotorKit
-
-### Combined Turret (2.75:1) + Stepper (NEMA-17) Statistics
+### Combined Turret (2.75:1) + Stepper (NEMA-17) Specifications
 * **Turret Step Angle:** 0.655° per step (1.8° * 2.75)
 * **Turret Revolution Steps:** 550 total steps (200 * 2.75)
 * **Turret Output Speed:** 18.18 RPM maximum
   * Steps per second: 18.18 RPM × 200 steps/revolution / 60 sec = 60.6 steps/sec
   * Time per single step: 1 second / 60.6 steps = 0.0165 sec (16.5 msec)
-* **Full Rotation Duration:** 3.3 secs
+* **Full Rotation Duration:** 3.3 secs (single step mode)
 * **Estimated Angular Error:** 0.033° positional error
 
 ### Adafruit Stepper Motor (NEMA-17) 4-wire bipolar
+* **Driver Software:** https://github.com/adafruit/Adafruit_CircuitPython_MotorKit
 * **Product Page:** [Adafruit Product 324](https://www.adafruit.com/product/324)
 * **Overview Doc:** [Adafruit DC & Stepper Motor HAT for Raspberry Pi](https://learn.adafruit.com/adafruit-dc-and-stepper-motor-hat-for-raspberry-pi)
 * **Rated Voltage & Current:** 12v  @ 350 mA

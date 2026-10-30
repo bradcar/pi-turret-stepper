@@ -89,19 +89,21 @@ def rotate_at_rpm_stepper(kit, output_rpm, number_rotations=1.0, gear_ratio=1.0,
     step_interval = 1.0 / steps_per_sec
 
     print(f"rotate_at_rpm_stepper: {steps_per_sec:.2f} steps/sec for {number_rotations} rotations ({total_steps} total steps).")
-
-    start_time = time.perf_counter()
-    chunk_start_time = start_time
-    step_count = 0
-
-    # Feedback loop variable for sleep correction
-    sleep_correction = 0.0
-
     if clockwise:
         stepper_direction = stepper.FORWARD
     else:
         stepper_direction = stepper.BACKWARD
 
+
+    # Calculate adaptive batch size based on speed (target ~0.1-0.2 sec windows), for sleep time correction
+    step_count = 0
+    batch_size = max(3, int(motor_rpm * 0.4))
+
+    print(f"batch_size: {batch_size} for {motor_rpm} RPM (batch duration={batch_duration:.4f}s)")
+    sleep_correction = 0.0
+
+    start_time = time.perf_counter()
+    batch_start_time = start_time
     try:
         while step_count < total_steps:
             step_start = time.perf_counter()
@@ -109,17 +111,17 @@ def rotate_at_rpm_stepper(kit, output_rpm, number_rotations=1.0, gear_ratio=1.0,
             kit.stepper1.onestep(direction=stepper_direction, style=stepper.SINGLE)
             step_count += 1
 
-            # Every 20 steps, evaluate performance and adjust sleep correction
-            if step_count % 20 == 0:
+            # Every batch size steps (~20 at 50 RPM), evaluate performance and adjust sleep correction
+            if step_count % batch_size == 0:
                 now = time.perf_counter()
-                chunk_duration = now - chunk_start_time
-                if chunk_duration > 0:
-                    est_motor_rpm = (20 / STEPS_PER_REV) * (60.0 / chunk_duration)
+                batch_duration = now - batch_start_time
+                if batch_duration > 0:
+                    est_motor_rpm = (batch_size / STEPS_PER_REV) * (60.0 / batch_duration)
                     est_output_rpm = est_motor_rpm / gear_ratio
 
                     # Calculate time error per step
                     target_time_per_step = step_interval
-                    actual_time_per_step = chunk_duration / 20.0
+                    actual_time_per_step = batch_duration / float(batch_size)
                     time_error = actual_time_per_step - target_time_per_step  # Positive = running too slow
 
                     # Apply a damped correction (0.5 gain) to prevent overshooting/oscillation
@@ -131,7 +133,7 @@ def rotate_at_rpm_stepper(kit, output_rpm, number_rotations=1.0, gear_ratio=1.0,
 
                     print(f"   -> Step {step_count}/{total_steps}: Motor RPM: {est_motor_rpm:.2f}, Turret RPM: {est_output_rpm:.2f},  Correction: {sleep_correction * 1000:.2f}ms")
 
-                chunk_start_time = now
+                batch_start_time = now
 
             # Sleep compensation with dynamic error correction
             elapsed = time.perf_counter() - step_start

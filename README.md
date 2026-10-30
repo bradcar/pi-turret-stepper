@@ -1,7 +1,10 @@
 # pi-turret-stepper
 Turret driven by stepper motor controlled by Pi Zero 2 W.
 
+Turret can be used as a platter for rotating sensors. Sensors may be mounted to point inward or outward.
 
+Scanning rotation example:
+* for 6 seconds every 0.655°, a complete rotation would take 3,300 seconds (55 min, = (550 * 6)/60)
 
 ## References:
 Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_specs.md)
@@ -9,7 +12,7 @@ Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_s
 ### GitHub for Adafruit DC and Stepper Motor HAT for Raspberry Pi
 * https://github.com/adafruit/Adafruit_CircuitPython_MotorKit
 
-### Combined Turret (2.75:1) + Stepper (NM-17) Statistics
+### Combined Turret (2.75:1) + Stepper (NEMA-17) Statistics
 * **Turret Step Angle:** 0.655° per step (1.8° * 2.75)
 * **Turret Revolution Steps:** 550 total steps (200 * 2.75)
 * **Turret Output Speed:** 18.18 RPM
@@ -31,7 +34,7 @@ Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_s
 
 ### goBILDA 169 Metal Turret
 * **Product Page:** [Gear-Driven Turret (2.75:1 Ratio, 105mm ID)](https://www.gobilda.com/gear-driven-turret-2-75-1-ratio-105mm-id/)
-* **Adaptors:** TODO
+* **Adaptors:**: 1700 Series Stepper Mount (NEMA 17), 1314 Series Set-Screw Hub (5mm Bore). 1120 Series U-Channel (8 Hole, 216mm), 140 Series Aluminum Baseplate (6mm, 144mm Diameter), Plastic Hub-Mount Disc (240mm Diameter)
 * **Gear Reduction:** 2.75:1
 * **Weight:** 438 g (with 64T Gear)
 

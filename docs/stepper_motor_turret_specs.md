@@ -1,9 +1,8 @@
-# Stepper Motor & Turret Assembly Specifications
-
-## 1. Combined Stepper + Turret Performance Statistics
+# Combined Turret & Stepper Motor Assembly
+## 1. Combined Stepper + Turret Specifications
 
 Resolution & Step Angle
-* **Turret Step Angle:** 0.655° per step (Standard Step 1.8° / 2.75)
+* **Turret Step Angle:** 0.655° per step (standard Step 1.8° / 2.75)
 * **Turret Revolution:** 
   * 550 steps Full Step (200 * 2.75)
   * 1,100 steps Half Step (400 * 2.75)
@@ -18,15 +17,15 @@ Ideal Holding Torque
 * **Metric (Newtons):** 55 N-cm (20 N-cm * 2.75)
 * **Imperial:** 77 oz-in (28 oz-in * 2.75)
 
-Realistic Holding Torque (~85% Efficiency)
+Realistic Holding Torque (~85% efficiency)
 * ~4.67 kg-cm
 * ~65.45 oz-in
 
 Mechanical Loading & Edge Forces
-* **Bending Moment (M):** 560 N-mm = 28N * 20mm *(Based on stepper rating of 28N at 20mm from the flange)*
+* **Bending Moment (M):** 560 N-mm = 28N * 20mm *(based on stepper rating of 28N at 20mm from the flange)*
 * **Turret Geometry:** 128mm diameter (64mm radius)
-* **Force at Turret Edge:** 8.75N = 560 N-mm / 64mm (~1.97 lbs)
-* **Safety Factor at Edge (50% to 75%):** 4.4 to 6.5N (~1 lbs)
+* **Force at Turret Edge:** 8.75N = 560 N-mm / 64mm (~1.97 Lbs)
+* **Safety Factor at Edge (50% to 75%):** 4.4 to 6.5N (~1 Lbs)
 
 Precision, Accuracy & Backlash
 * **Estimated Angular Error:** 0.033° positional error at the turret output.
@@ -35,7 +34,7 @@ Precision, Accuracy & Backlash
   * Even if the motor steps precisely, the turret may exhibit a small deadband of free movement before gears engage in the opposite direction, unless anti-backlash gears or preload mechanisms are used.
 
 ## 2. Adafruit Stepper Motor 4-wire bipolar (NEMA-17, pid 324)
-* **Rated Voltage:** 12V (can be driven at lower voltage, but torque will drop)
+* **Rated Voltage:** 12V
 * **Max Current:** 350mA
 
 ### Physical & Mechanical Specifications
@@ -50,9 +49,9 @@ Precision, Accuracy & Backlash
   * 20 N-cm
   * 2 kg-cm
 * **Operating temp:**  Measured 60°C - Stepper motors are designed to run hot due to continuously holding current even when stationary.
-* **Heat Sinks:**  Most effective on bottom. but sides also good if bottom no accessible.
-  * Aluminum Heat Sink 40x40x20mm with Thermal Conductive Adhesive Tape
-  * Thermal paste is used between 1700 Series stepper Mount(which is on top of motor) and stepper. Turret frame may move some heat.
+* **Heat Sinks:**  Most effective on bottom. but sides also good if bottom not accessible.
+  * Aluminum Heat Sink 40x40x20mm with thermal conductive adhesive tape
+  * Thermal paste is used between 1700 Series stepper mount and top of stepper. Turret frame may remmove some heat (open question how much?).
 
 ### Links & Documentation
 * **Product Page:** [Adafruit Product 324](https://www.adafruit.com/product/324)
@@ -61,15 +60,15 @@ Precision, Accuracy & Backlash
 
 ## 3. goBILDA 169 Metal Turret (3208-0004-0001)
 * **Product Page:** [Gear-Driven Turret (2.75:1 Ratio, 105mm ID)](https://www.gobilda.com/gear-driven-turret-2-75-1-ratio-105mm-id/)
-* **Gear Reduction:** 2.75:1
-* **Weight:** 438g (with 64T Gear — may need to be purchased separately)
+* **Gear Reduction:** 2.75:1 ratio
+* **Weight:** 438g (with 64T Gear)
 * **Adaptors:**: 
   * 1700 Series Stepper Mount (NEMA-17)
-    * will add thermal paste so frame can also be heat sink
-  * 1314 Series Set-Screw Hub (5mm Bore)
+    * Adding thermal paste between top stepper & mount so that the frame can also be heat sink.
+  * 1314 Series Set-Screw Hub (5mm bore)
   * 1120 Series U-Channel (8 Hole, 216mm)
-  * 140 Series Aluminum Baseplate (6mm, 144mm Diameter)
-  * Plastic Hub-Mount Disc (240mm Diameter)
+  * 140 Series Aluminum Baseplate (6mm, 144mm diameter)
+  * Plastic Hub-Mount Disc (240mm diameter)
 
 ---
 

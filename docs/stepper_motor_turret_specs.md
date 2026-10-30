@@ -43,12 +43,16 @@ Precision, Accuracy & Backlash
 * **Mounting Holes:** 31mm / 1.22" square pattern, 3mm metric screws (M3)
 * **Drive Shaft:** 5mm diameter, 24mm long, with a machined flat
 * **Step Angle:** 1.8° per step (5% angle accuracy)
-* **Steps per Revolution:** 200
+* **Steps per Revolution:** 200 steps
 * **Speed:** 50 RPM
 * **Holding Torque (per phase):** 
   * 28 oz-in
   * 20 N-cm
   * 2 kg-cm
+* **Operating temp:**  Measured 60°C - Stepper motors are designed to run hot due to continuously holding current even when stationary.
+* **Heat Sinks:**  Most effective on bottom. but sides also good if bottom no accessible.
+  * Aluminum Heat Sink 40x40x20mm with Thermal Conductive Adhesive Tape
+  * Thermal paste is used between 1700 Series stepper Mount(which is on top of motor) and stepper. Turret frame may move some heat.
 
 ### Links & Documentation
 * **Product Page:** [Adafruit Product 324](https://www.adafruit.com/product/324)

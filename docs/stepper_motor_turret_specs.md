@@ -18,8 +18,8 @@ Ideal Holding Torque
 * **Imperial:** 77 oz-in (28 oz-in * 2.75)
 
 Realistic Holding Torque (~85% efficiency)
-* ~4.67 kg-cm
-* ~65.45 oz-in
+* 4.7 kg-cm
+* 65.5 oz-in
 
 Mechanical Loading & Edge Forces
 * **Bending Moment (M):** 560 N-mm = 28N * 20mm *(based on stepper rating of 28N at 20mm from the flange)*
@@ -30,7 +30,7 @@ Mechanical Loading & Edge Forces
 Precision, Accuracy & Backlash
 * **Estimated Angular Error:** 0.033° positional error at the turret output.
 * **Backlash:**
-  * On metal turret reductions, mechanical backlash (interplay between gear teeth) an dominate real-world positioning accuracy when reversing direction.
+  * On metal turret reductions, mechanical backlash (interplay between gear teeth) can dominate real-world positioning accuracy when reversing direction.
   * Even if the motor steps precisely, the turret may exhibit a small deadband of free movement before gears engage in the opposite direction, unless anti-backlash gears or preload mechanisms are used.
 
 ## 2. Adafruit Stepper Motor 4-wire bipolar (NEMA-17, pid 324)

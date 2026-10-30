@@ -43,25 +43,25 @@ kit.stepper1.release()
 
 print(" Four tests: 180° forward and back (100 Steps each)\n")
 while True:
-    print("\nSingle coil steps (1.8°/step, lower torque, cooler)")
+    print("\nSingle coil steps (1.8°/step, lower torque, cooler), 100 steps= 180°")
     for i in range(100):
         kit.stepper1.onestep(direction=stepper.FORWARD, style=stepper.SINGLE)
     for i in range(100):
         kit.stepper1.onestep(direction=stepper.BACKWARD, style=stepper.SINGLE)
 
-    print("Double coil steps (1.8°/step, highest torque, hottest)")
+    print("Double coil steps (1.8°/step, highest torque, hottest), 100 steps= 180°")
     for i in range(100):
         kit.stepper1.onestep(direction=stepper.FORWARD, style=stepper.DOUBLE)
     for i in range(100):
         kit.stepper1.onestep(direction=stepper.BACKWARD, style=stepper.DOUBLE)
 
-    print("Interleaved coil steps (0.9°/step, moderate torque/temp)")
+    print("Interleaved coil steps (0.9°/step, moderate torque/temp), 100 steps= 90°")
     for i in range(100):
         kit.stepper1.onestep(direction=stepper.FORWARD, style=stepper.INTERLEAVE)
     for i in range(100):
         kit.stepper1.onestep(direction=stepper.BACKWARD, style=stepper.INTERLEAVE)
 
-    print("Microsteps (0.1125°/step [16x], ultra-smooth, fluctuating torque)")
+    print("Microsteps (0.1125°/step [16x], ultra-smooth, fluctuating torque), 100 steps= 11.25°")
     for i in range(100):
         kit.stepper1.onestep(direction=stepper.FORWARD, style=stepper.MICROSTEP)
     for i in range(100):

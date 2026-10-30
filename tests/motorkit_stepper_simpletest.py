@@ -11,6 +11,7 @@ import busio # Brad added:
 from adafruit_motorkit import MotorKit
 
 kit = MotorKit(i2c=board.I2C())
+kit.stepper1.release()
 
 # Brad added: i2c scan (note this is actually i2c1,
 i2c1 = busio.I2C(board.SCL, board.SDA)

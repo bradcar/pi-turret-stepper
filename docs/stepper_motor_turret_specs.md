@@ -71,21 +71,19 @@ Precision, Accuracy & Backlash
   * Plastic Hub-Mount Disc (240mm diameter)
 
 ## 4. Optical encoder [TODO ...Explore this more]
-Stepper Motor on turret drives 64-tooth gear MOD 0.8 (goBilda)
+Optical encoder connected to 30-Tooth Encoder Pinion Gear
 * **Encoder Product (DigiKey):** Bourns EM14R0D-R20-L064S optical encoder
 * **Product page:** https://www.digikey.com/en/products/detail/bourns-inc/EM14R0D-R20-L064S/2538006
-  * When reading both leading/trailing edges of both channels, 64 PPR gives 256 Counts Per Revolution (CPR).
-
-  * Quadrature Encoder Specifications
+  * Optical Quadrature Encoder Specifications
     * Encoder Resolution: 64 PPR (Pulses Per Revolution)
-    * Quadrature Decoding: Optical quadrature encoders generate two signal lines (A and B) shifted by 90°.
+    * Quadrature Decoding: 256 Counts Per Revolution (CPR) Generates 4x counts per pulse (leading/trailing edges of both channels).
     * 120 Max RPM
     * No Detent (1M cycles)
   * 6mm D-shaft (flatten end)
   * 5v - need buck converter and level shifter to work with Pi 3v3
 * **30-Tooth Encoder Pinion Gear (goBilda):** 2303 Series Steel, MOD 0.8 Pinion Gear (6mm D-Bore, 30 tooth)
-  * Provides high Resolution for Missed Step Detection and still below encoder max speed
-    * 64:30 tooth ratio (2.133) gives 2.73 counts per full motor step. Gives high confidence to detect a single missed step.
-  * 64:30 Stepper converts 50 RPM to 106.6 RPM, which is less than encoder's 120 RPM Max
+  * High confidence for missed Step Detection gives 2.73 counts per full motor step.
+    * 2.73 counts = 256 CPR/200 steps * 2.133 gear ratio (64:30)
+  * 64:30 Stepper converts 50 RPM to 106.6 RPM (50 * 2.133), which is less than encoder's 120 RPM Max
 ---
 

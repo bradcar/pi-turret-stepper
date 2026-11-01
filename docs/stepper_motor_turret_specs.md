@@ -24,14 +24,14 @@ Realistic Holding Torque (~85% efficiency)
 Mechanical Loading & Edge Forces
 * **Bending Moment (M):** 560 N-mm = 28N * 20mm *(based on stepper rating of 28N at 20mm from the flange)*
 * **Turret Geometry:** 128mm diameter (64mm radius)
-* **Force at Turret Edge:** 8.75N = 560 N-mm / 64mm (~1.97 Lbs)
+* **Force at Turret Edge (64mm:** 8.75N = 560 N-mm / 64mm (~1.97 Lbs)
 * **Safety Factor at Edge (50% to 75%):** 4.4 to 6.5N (~1 Lbs)
 
 Precision, Accuracy & Backlash
-* **Estimated Angular Error:** 0.033° positional error at the turret output.
+* **Estimated Angular Error:** 0.033° positional error at the turret output
 * **Backlash:**
-  * On metal turret reductions, mechanical backlash (interplay between gear teeth) can dominate real-world positioning accuracy when reversing direction.
-  * Even if the motor steps precisely, the turret may exhibit a small deadband of free movement before gears engage in the opposite direction, unless anti-backlash gears or preload mechanisms are used.
+  * On metal turret reductions, mechanical backlash (interplay between gear teeth) can dominate real-world positioning accuracy when reversing direction
+  * Even if the motor steps precisely, the turret may exhibit a small deadband of free movement before gears engage in the opposite direction, unless anti-backlash gears or preload mechanisms are used
 
 ## 2. Adafruit Stepper Motor 4-wire bipolar (NEMA-17, pid 324)
 * **Rated Voltage:** 12V
@@ -48,10 +48,10 @@ Precision, Accuracy & Backlash
   * 28 oz-in
   * 20 N-cm
   * 2 kg-cm
-* **Operating temp:**  Measured 60°C - Stepper motors are designed to run hot due to continuously holding current even when stationary.
-* **Heat Sinks:**  Most effective on bottom. but sides also good if bottom not accessible.
+* **Operating temp:**  Measured 60°C - Stepper motors are designed to run hot due to continuously holding current even when stationary
+* **Heat Sinks:**  Most effective on bottom. but sides also good if bottom not accessible
   * Aluminum Heat Sink 40x40x20mm with thermal conductive adhesive tape
-  * Thermal paste is used between 1700 Series stepper mount and top of stepper. Turret frame may remmove some heat (open question how much?).
+  * Thermal paste is used between 1700 Series stepper mount and top of stepper. Turret frame may remmove some heat (open question how much?)
 
 ### Links & Documentation
 * **Product Page:** [Adafruit Product 324](https://www.adafruit.com/product/324)
@@ -60,7 +60,7 @@ Precision, Accuracy & Backlash
 
 ## 3. goBILDA 169 Metal Turret (3208-0004-0001)
 * **Product Page:** [Gear-Driven Turret (2.75:1 Ratio, 105mm ID)](https://www.gobilda.com/gear-driven-turret-2-75-1-ratio-105mm-id/)
-* **Gear Reduction:** 2.75:1 ratio
+* **Gear Reduction:** 2.75:1 ratio (Gears MOD 0.8)
 * **Weight:** 438g (with 64T Gear)
 * **Adaptors:**: 
   * 1700 Series Stepper Mount (NEMA-17)
@@ -71,18 +71,21 @@ Precision, Accuracy & Backlash
   * Plastic Hub-Mount Disc (240mm diameter)
 
 ## 4. Optical encoder [TODO ...Explore this more]
-Stepper Motor on turret drives 64-tooth gear (goBilda)
+Stepper Motor on turret drives 64-tooth gear MOD 0.8 (goBilda)
 * **Encoder Product (DigiKey):** Bourns EM14R0D-R20-L064S optical encoder
 * **Product page:** https://www.digikey.com/en/products/detail/bourns-inc/EM14R0D-R20-L064S/2538006
-  * 6mm D-shaft
-  * Encoder Specifications & Quadrature Math 
-    * Encoder Resolution: 64 PPR (Pulses Per Revolution).
-    * Quadrature Decoding: Optical quadrature encoders generate two signal lines (A and B) shifted by 90°. 
   * When reading both leading/trailing edges of both channels, 64 PPR gives 256 Counts Per Revolution (CPR).
-  * Stepper Resolution: 200 step/rev motor operating in full steps requires 1 step per 1.8°
+
+  * Quadrature Encoder Specifications
+    * Encoder Resolution: 64 PPR (Pulses Per Revolution)
+    * Quadrature Decoding: Optical quadrature encoders generate two signal lines (A and B) shifted by 90°.
+    * 120 Max RPM
+    * No Detent (1M cycles)
+  * 6mm D-shaft (flatten end)
+  * 5v - need buck converter and level shifter to work with Pi 3v3
 * **30-Tooth Encoder Pinion Gear (goBilda):** 2303 Series Steel, MOD 0.8 Pinion Gear (6mm D-Bore, 30 tooth)
-  * The Bourns EM14 series optical encoder has a maximum rating of 120 RPM.
-  * High Resolution for Missed Step Detection:
-    * 64:30 tooth ratio gives 2.73 counts per full motor step. Gives high confidence to detect a single missed step.
+  * Provides high Resolution for Missed Step Detection and still below encoder max speed
+    * 64:30 tooth ratio (2.133) gives 2.73 counts per full motor step. Gives high confidence to detect a single missed step.
+  * 64:30 Stepper converts 50 RPM to 106.6 RPM, which is less than encoder's 120 RPM Max
 ---
 

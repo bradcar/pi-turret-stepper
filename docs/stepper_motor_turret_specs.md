@@ -28,7 +28,9 @@ Mechanical Loading & Edge Forces
 * **Safety Factor at Edge (50% to 75%):** 4.4 to 6.5N (~1 Lbs)
 
 Precision, Accuracy & Backlash
-* **Estimated Angular Error:** 0.033° positional error at the turret output
+* **Real World Directional Repaeatabiltiy** 0.1° of rotational backlash at the output gear for MOD 0.8 gear meshes.
+  * System Bottleneck: Even with 1/16 microstepping (0.033°) is limited by mechanical backlash, not motor step resolution.
+  * Estimated Gear Angular Error:** 0.033° positional error at the turret output
 * **Backlash:**
   * On metal turret reductions, mechanical backlash (interplay between gear teeth) can dominate real-world positioning accuracy when reversing direction
   * Even if the motor steps precisely, the turret may exhibit a small deadband of free movement before gears engage in the opposite direction, unless anti-backlash gears or preload mechanisms are used
@@ -85,5 +87,11 @@ Optical encoder connected to 30-Tooth Encoder Pinion Gear
   * High confidence for missed Step Detection gives 2.73 counts per full motor step.
     * 2.73 counts = 256 CPR/200 steps * 2.133 gear ratio (64:30)
   * 64:30 Stepper converts 50 RPM to 106.6 RPM (50 * 2.133), which is less than encoder's 120 RPM Max
+* **48-Tooth Gear (goBilda):** 2303 Series Steel, MOD 0.8 Pinion Gear (6mm D-Bore, 48 tooth)
+* **BEST OPTION**
+* **24-Tooth Encoder Pinion Gear (goBilda):** 2303 Series Steel, MOD 0.8 Pinion Gear (6mm D-Bore, 24 tooth)
+  * High confidence for missed Step Detection gives 2.00 counts per full motor step.
+    * 2.0 counts = 256 CPR/200 steps * 2.0 gear ratio (48:24)
+  * 48:24 Stepper converts 50 RPM to 100 RPM (50 * 2.0), which is less than encoder's 120 RPM Max
 ---
 

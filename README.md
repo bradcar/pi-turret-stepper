@@ -4,8 +4,8 @@ Turret driven by stepper motor controlled by Pi Zero 2 W.
 Turret can be used as a platter for rotating sensors. Sensors may be mounted to point outward.
 Because this is turret, the platter can be removed and sensors may be pointed inward toward the center where non-rotating sample can be placed.
 
-Scanning rotation example:
-* In the case where 6 seconds elapase every turret step (0.655°), a complete rotation would take 3,300 seconds (55 min = (550 * 6)/60)
+Slow Scanning rotation example:
+* In the case where 6 seconds between each turret step (0.655°), a complete rotation would take 3,300 seconds (55 min = (550 * 6)/60)
 
 ## References:
 Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_specs.md)
@@ -30,6 +30,11 @@ Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_s
 * **Holding Torque (per phase):**
   * 2 kg-cm (20 N-cm, 28 oz-in)
 * **Drive Shaft:** 5 mm diameter, 24 mm long, with a machined flat
+* **Wiring:** CAT5 (Doubling Up Pairs to handle NEMA-17) 8 wires (4 twisted pairs).
+  * Phase A+ (Red) Orange + Orange/White connected ~21 AWG (Safe for ~1.5A)
+  * Phase A- (Blue) Green + Green/White connected ~21 AWG (Safe for ~1.5A)
+  * Phase B+ (Black) Blue + Blue/White connected ~21 AWG (Safe for ~1.5A)
+  * Phase B- (Green) Brown + Brown/White connected ~21 AWG (Safe for ~1.5A)
 
 ### goBILDA 169 Metal Turret
 * **Product Page:** [Gear-Driven Turret (2.75:1 Ratio, 105mm ID)](https://www.gobilda.com/gear-driven-turret-2-75-1-ratio-105mm-id/)

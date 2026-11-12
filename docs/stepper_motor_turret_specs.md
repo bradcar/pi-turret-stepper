@@ -62,7 +62,7 @@ Precision, Accuracy & Backlash
 
 ## 3. goBILDA 169 Metal Turret (3208-0004-0001)
 * **Product Page:** [Gear-Driven Turret (2.75:1 Ratio, 105mm ID)](https://www.gobilda.com/gear-driven-turret-2-75-1-ratio-105mm-id/)
-* **Gear Reduction:** 2.75:1 ratio (Gears MOD 0.8)
+* **Gear Reduction:** 2.75:1 ratio (Gears: 176-tooth turret : 64-tooth Motor Geer, MOD 0.8)
 * **Weight:** 438g (with 64T Gear)
 * **Adaptors:**: 
   * 1700 Series Stepper Mount (NEMA-17)
@@ -72,7 +72,40 @@ Precision, Accuracy & Backlash
   * 140 Series Aluminum Baseplate (6mm, 144mm diameter)
   * Plastic Hub-Mount Disc (240mm diameter)
 
-## 4. Optical encoder [TODO ...Explore this more]
+
+## 4b. Magnetic encoder [TODO ...Explore this more]
+Optical encoder connected to 30-Tooth Encoder Pinion Gear
+* **Encoder Product (SparkFun):** Cooka CS19D128B magnetic encoder
+  * **Product page:** https://www.sparkfun.com/magnetic-rotary-encoder-128-p-r-quadrature-w-switch.html
+    * Optical Quadrature Encoder Specifications
+      * Encoder Resolution: 128 PPR (Pulses Per Revolution)
+      * Quadrature Decoding: 512 Counts Per Revolution (CPR) Generates 4x counts per pulse (leading/trailing edges of both channels).
+      * ? Max RPM
+      * No Detent (1M cycles)
+    * 6mm D-shaft (flatten end)
+    * will work with Pi 3v3
+ **Encoder Product (Digikey):** EMS22A30-M25-LD6 (Mouser 6mm), EMS22A30-C28-MS6 (Digikey 1/4" ED shaft)
+  * **Backorder** Boorne EMS22A30-M25-LD6 magnetic encoder (6mm Shaft)
+  * **Product page (Mouser 6mm):** https://www.mouser.com/en/ProductDetail/Bourns/EMS22A30-M25-LD6?qs=6oMev5NRZMGDGuATbcqlJQ%3D%3D
+  * **Product page (Digikey 1/4"):** https://www.digikey.com/en/products/detail/bourns-inc/EMS22A30-C28-MS6/3693518
+    * Magnetic Encoder Specifications
+    * Absolute encoder, SPI: https://hareshmiriyala.wordpress.com/2018/02/19/interfacing-an-absolute-encoder-to-raspberry-pi/
+      * Asolulute Encoder: 1024 posititions
+      * No Detent (100M cycles)
+      * Mouser has 6mm in stock, Digikey has backorder only
+      * 3.3v
+* **30-Tooth Encoder Pinion Gear (goBilda):** 2303 Series Steel, MOD 0.8 Pinion Gear (6mm D-Bore, 30 tooth)
+  * High confidence for missed Step Detection gives 2.73 counts per full motor step.
+    * 2.73 counts = 256 CPR/200 steps * 2.133 gear ratio (64:30)
+  * 64:30 Stepper converts 50 RPM to 106.6 RPM (50 * 2.133), which is less than encoder's 120 RPM Max
+* **48-Tooth Gear (goBilda):** 2303 Series Steel, MOD 0.8 Pinion Gear (6mm D-Bore, 48 tooth)
+* **BEST OPTION**
+* **24-Tooth Encoder Pinion Gear (goBilda):** 2303 Series Steel, MOD 0.8 Pinion Gear (6mm D-Bore, 24 tooth)
+  * High confidence for missed Step Detection gives 2.00 counts per full motor step.
+    * 2.0 counts = 256 CPR/200 steps * 2.0 gear ratio (48:24)
+  * 48:24 Stepper converts 50 RPM to 100 RPM (50 * 2.0), which is less than encoder's 120 RPM Max
+
+## 4b. Optical encoder [TODO ...Explore this more]
 Optical encoder connected to 30-Tooth Encoder Pinion Gear
 * **Encoder Product (DigiKey):** Bourns EM14R0D-R20-L064S optical encoder
 * **Product page:** https://www.digikey.com/en/products/detail/bourns-inc/EM14R0D-R20-L064S/2538006
@@ -94,4 +127,14 @@ Optical encoder connected to 30-Tooth Encoder Pinion Gear
     * 2.0 counts = 256 CPR/200 steps * 2.0 gear ratio (48:24)
   * 48:24 Stepper converts 50 RPM to 100 RPM (50 * 2.0), which is less than encoder's 120 RPM Max
 ---
+
+Hub Gears:
+ 45-tooth, 46-tooth, 48-tooth, 50-tooth, 52 tooth, 54-tooth, 56-tooth, 58-tooth, 60-tooth, 64-tooth
+Pinion Gears
+ 15-tooth, 20-tooth, 24-tooth, 30-tooth
+
+2:1 reduction
+  * May have to use 2:1 on motor, such as putting 48T:24T or 60T:30T
+  * 0.064° per count
+  * 5.5 Motor revolutions per Turret revolution
 

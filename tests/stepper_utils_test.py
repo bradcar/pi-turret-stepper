@@ -2,8 +2,8 @@ import board
 import busio
 from adafruit_motorkit import MotorKit
 
-from lib.stepper_4_wire_bipolar_utils import rotate_at_rpm_stepper, turn_off_stepper, OUTPUT_GEAR_REDUCTION, \
-    MAX_RATED_RPM_STEPPER
+from lib.stepper_4_wire_bipolar_utils import (rotate_at_rpm_stepper, turn_off_stepper, rotate_time_between_steps_stepper, \
+    OUTPUT_GEAR_REDUCTION, MAX_RATED_RPM_STEPPER)
 
 kit = MotorKit(i2c=board.I2C())
 kit.stepper1.release()
@@ -21,18 +21,26 @@ try:
     print("\n=== Test 2: Negative RPM")
     rotate_at_rpm_stepper(kit, output_rpm=-5, output_rotations=2, gear_ratio=OUTPUT_GEAR_REDUCTION, clockwise=True)
 
-    turret_rpm = MAX_RATED_RPM_STEPPER / OUTPUT_GEAR_REDUCTION
+    # turret_rpm = MAX_RATED_RPM_STEPPER / OUTPUT_GEAR_REDUCTION
+    # turret_rpm = 12
+    # number_rotations = 2.0
+    #
+    # print(f"\n=== Test 3: Direct Drive Clockwise ({turret_rpm:.2f} RPM)")
+    # rotate_at_rpm_stepper(kit, output_rpm=turret_rpm, output_rotations=number_rotations,
+    #                       gear_ratio=OUTPUT_GEAR_REDUCTION, clockwise=True)
+    #
+    # print(f"\n=== Test 4: Direct Drive Counter-Clockwise ({turret_rpm:.2f} RPM)")
+    # rotate_at_rpm_stepper(kit, output_rpm=turret_rpm, output_rotations=number_rotations,
+    #                       gear_ratio=OUTPUT_GEAR_REDUCTION, clockwise=False)
+    #
+    # turn_off_stepper(kit)
 
-    turret_rpm = 12
-    number_rotations = 2.0
 
-    print(f"\n=== Test 3: Direct Drive Clockwise ({turret_rpm:.2f} RPM)")
-    rotate_at_rpm_stepper(kit, output_rpm=turret_rpm, output_rotations=number_rotations,
-                          gear_ratio=OUTPUT_GEAR_REDUCTION, clockwise=True)
+    # Slow Scanning rotation example:
+    # With 6 seconds between each motor step (0.655°), 3,300 seconds per rotation (55 min = (550 * 6)/60)
 
-    print(f"\n=== Test 4: Direct Drive Counter-Clockwise ({turret_rpm:.2f} RPM)")
-    rotate_at_rpm_stepper(kit, output_rpm=turret_rpm, output_rotations=number_rotations,
-                          gear_ratio=OUTPUT_GEAR_REDUCTION, clockwise=False)
+    rotate_time_between_steps_stepper(kit, step_interval_sec=1, output_rotations=1.1, gear_ratio=OUTPUT_GEAR_REDUCTION,
+                                      clockwise=True)
 
     turn_off_stepper(kit)
 

@@ -41,13 +41,13 @@ Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_s
 * **Gear Reduction:** 2.75:1
 * **Weight:** 438 g (with 64T Gear)
 
-### Battery operation - 5800mAh 12V Lithium Battery with Charger
-* **Product Page:** https://www.amazon.com/gp/product/B0DZM52TB5
-* **Capacity:** 5800 mAh @ 12 volt (5.8 Ah, 69.6 Watt-hours)
+### Battery operation - 5200mAh 12V Lithium Battery with Charger
+* **Product Page:** https://www.amazon.com/Rechargeable-Connector-Projects-Security-Telescopes/dp/B0GY8R4RB5
+* **Capacity:** 5200 mAh @ 12 volt (5.2 Ah, 69.6 Watt-hours)
 * **NEMA-17 Load:** .7A (350 mA each phase)
-* **Active Run Time:** 6.6 Hours = (5.8 Ah / 0.7 A) * 0.80 efficiency
-* **Size:**  4.33 x 3.54 x 3.14 in 
-* **Weight:**  380 g (0.83 lb)
+* **Active Run Time:** 5.9 Hours = (5.82Ah / 0.7 A) * 0.80 efficiency
+* **Size:**  2.76 x 2.17 x 1.57 in (70x55x40mm)
+* **Weight:**  310 g (0.68 lb)
 
 ### Python
 * **Software:** pip3 install adafruit-circuitpython-motorkit

@@ -43,10 +43,10 @@ Detailed HW/SW Info: [stepper_motor_turret_specs.md](docs/stepper_motor_turret_s
 
 ### Battery operation - 5200mAh 12V Lithium Battery with Charger
 * **Product Page:** https://www.amazon.com/Rechargeable-Connector-Projects-Security-Telescopes/dp/B0GY8R4RB5
-* **Capacity:** 5200 mAh @ 12 volt (5.2 Ah, 69.6 Watt-hours)
+* **Capacity:** 5200 mAh @ 12 volt (5.2 Ah, 62.4 Watt-hours)
 * **NEMA-17 Load:** .7A (350 mA each phase)
 * **Active Run Time:** 5.9 Hours = (5.82Ah / 0.7 A) * 0.80 efficiency
-* **Size:**  2.76 x 2.17 x 1.57 in (70x55x40mm)
+* **Size:**  70 x 55 x 40mm (2.76x2.17x1.57 in)
 * **Weight:**  310 g (0.68 lb)
 
 ### Python
